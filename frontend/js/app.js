@@ -18,13 +18,13 @@ function esc(s) {
         .replace(/'/g, '&#39;');
 }
 
-function mostrarToast(msg, tipo) {
+function mostrarToast(msg, tipo, duracion) {
     const container = $('toastContainer');
     const toast = document.createElement('div');
     toast.className = 'toast ' + (tipo || 'info');
     toast.textContent = (iconos[tipo] || 'ℹ️') + ' ' + msg;
     container.appendChild(toast);
-    setTimeout(() => { toast.remove(); }, 4000);
+    setTimeout(() => { toast.remove(); }, duracion || 4000);
 }
 const iconos = { success: '✅', error: '❌', info: 'ℹ️' };
 
@@ -51,12 +51,14 @@ function abrirModal(titulo, desc, btnText, callback) {
     setTimeout(() => $('modalNombre').focus(), 100);
 }
 
-function setModalCodeStep(email) {
-    $('modalTitle').textContent = '🔐 Ingresá el código';
-    $('modalDesc').textContent = `Te enviaremos un código a ${esc(email)}`;
+function setModalCodeStep(email, codigo) {
+    $('modalTitle').textContent = codigo ? '🔐 Tu código (desarrollo)' : '🔐 Ingresá el código';
+    $('modalDesc').innerHTML = codigo
+        ? `Te enviaremos un código a ${esc(email)}.<br><strong style="font-size:1.6rem;letter-spacing:6px;color:var(--primary)">${esc(codigo)}</strong><br><small style="color:var(--gray-500)">(modo desarrollo: el código se muestra acá; en producción llega por email)</small>`
+        : `Te enviaremos un código a ${esc(email)}`;
     $('modalNombre').type = 'text';
     $('modalNombre').placeholder = 'Código de verificación';
-    $('modalNombre').value = '';
+    $('modalNombre').value = codigo || '';
     $('modalNombre').maxLength = 6;
     $('modalNombre').style.textAlign = 'center';
     $('modalNombre').style.fontSize = '1.5rem';
@@ -242,8 +244,12 @@ async function registrarOJugar() {
                 cerrarModal();
                 return;
             }
-            if (data.dev_code) mostrarToast('⚠️ Desarrollo: el código es ' + data.dev_code, 'info');
-            setModalCodeStep(email);
+            if (data.dev_code) {
+                mostrarToast('🔐 Código de verificación: ' + data.dev_code, 'info', 15000);
+                setModalCodeStep(email, data.dev_code);
+            } else {
+                setModalCodeStep(email);
+            }
             modalCallback = async (codigo) => {
                 try {
                     const r = await API.verificarCodigo(email, codigo, '');
