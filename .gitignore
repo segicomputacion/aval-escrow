@@ -3,6 +3,8 @@ artifacts/
 cache/
 database.json
 database.json.tmp
+smoke-db.json
+*.log
 .env
 *.tar.gz
 .DS_Store
