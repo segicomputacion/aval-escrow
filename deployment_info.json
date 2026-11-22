@@ -1,0 +1,10 @@
+{
+  "project": "AvalEscrow",
+  "network": "amoy",
+  "contractAddress": "0x5e58De78B8c1e177a02783Ac8473fe3855329545",
+  "walletService": "0x52946000591272841D1118eCCad5912ae97f466a",
+  "usdtContract": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+  "deployDate": "2026-07-22",
+  "status": "redeploy_necesario_con_semántica_nueva_v2_de_onchain",
+  "notes": "Contracto desplegado con Semántica antigua. Off-chain ya funciona; para on-chain se debe volver a hacer deploy con scripts/deploy.js --network amoy"
+}

@@ -1,0 +1,6 @@
+node_modules/
+database.json
+database.json.tmp
+.env
+*.tar.gz
+.DS_Store

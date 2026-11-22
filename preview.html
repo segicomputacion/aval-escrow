@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AvalEscrow - Preview</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; color: #1e293b; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+h2 { text-align: center; padding: 20px 0; color: #2563eb; }
+h3 { margin: 30px 0 12px; color: #334155; }
+
+/* Screenshot mock */
+.screen {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    max-width: 700px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+.screen-header {
+    background: #2563eb;
+    color: white;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.screen-header .logo { font-weight: 700; font-size: 1.1rem; }
+.screen-header .nav { display: flex; gap: 16px; font-size: 0.85rem; }
+.screen-body { padding: 24px; }
+.hero { text-align: center; padding: 30px 0; }
+.hero h1 { font-size: 2rem; color: #0f172a; margin-bottom: 12px; }
+.hero p { color: #64748b; max-width: 500px; margin: 0 auto 24px; }
+.btn { display: inline-block; padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; margin: 4px; }
+.btn-primary { background: #2563eb; color: white; }
+.btn-outline { border: 2px solid #e2e8f0; color: #334155; }
+.features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.feature { background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #f1f5f9; }
+.feature .icon { font-size: 1.8rem; margin-bottom: 8px; }
+.feature h4 { font-size: 1rem; margin-bottom: 4px; }
+.feature p { font-size: 0.85rem; color: #64748b; }
+
+/* Form */
+.form { background: white; border-radius: 12px; padding: 24px; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 4px; color: #475569; }
+.form-group input { width: 100%; padding: 10px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; }
+.form-group input:focus { outline: none; border-color: #2563eb; }
+.btn-block { width: 100%; text-align: center; }
+.features-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.8rem; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>🛡️ AvalEscrow — Vista previa</h2>
+
+<!-- Screen 1: Hero -->
+<div class="screen">
+    <div class="screen-header">
+        <span class="logo">🛡️ AvalEscrow</span>
+        <div class="nav">
+            <span>Inicio</span>
+            <span>Nueva Transacción</span>
+            <span>🔗 En Cadena</span>
+            <span>💰 Comisiones</span>
+        </div>
+    </div>
+    <div class="screen-body">
+        <div class="hero">
+            <h1>Pagá seguro, vendé tranquilo</h1>
+            <p>La plata que ponés queda retenida hasta que recibas el producto y confirmes que está todo bien. Sin riesgos, sin garcas.</p>
+            <a class="btn btn-primary">Crear transacción</a>
+            <a class="btn btn-outline">¿Cómo funciona?</a>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <div class="icon">🔒</div>
+                <h4>Vos no transferís directo</h4>
+                <p>El comprador deposita en un contrato inteligente.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">✅</div>
+                <h4>Confirmás vos</h4>
+                <p>¿Llegó bien? Apretás un botón y se libera.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">⚖️</div>
+                <h4>Arbitraje si hay problema</h4>
+                <p>Disputa con revisión de pruebas.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🇦🇷</div>
+                <h4>Pensado para Argentina</h4>
+                <p>Pagás con transferencia o Mercado Pago.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Screen 2: Form -->
+<div class="screen">
+    <div class="screen-header">
+        <span class="logo">🛡️ AvalEscrow</span>
+        <div class="nav">
+            <span>Inicio</span>
+            <span style="color: #93c5fd;">Nueva Transacción</span>
+        </div>
+    </div>
+    <div class="screen-body">
+        <h3 style="margin:0 0 4px; text-align:center;">Nueva transacción</h3>
+        <p style="text-align:center;color:#64748b;font-size:0.9rem;margin-bottom:16px;">Completá los datos de la compra-venta</p>
+        <div class="form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email del comprador</label>
+                    <input placeholder="comprador@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label>Nombre del comprador</label>
+                    <input placeholder="Juan Pérez">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email del vendedor</label>
+                    <input placeholder="vendedor@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label>Nombre del vendedor</label>
+                    <input placeholder="María García">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Producto / Servicio</label>
+                <input placeholder="Ej: Notebook HP Pavilion i5, 8GB RAM">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Monto en pesos ($)</label>
+                    <input placeholder="150000">
+                </div>
+                <div class="form-group">
+                    <label>Plazo (días)</label>
+                    <input value="7">
+                </div>
+            </div>
+            <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:12px;margin:12px 0;font-size:0.85rem;">
+                <div style="display:flex;justify-content:space-between;"><span>🔵 Fee comprador (2%)</span><strong>$3.000</strong></div>
+                <div style="display:flex;justify-content:space-between;margin-top:4px;"><span>🟢 Fee vendedor (2%)</span><strong>$3.000</strong></div>
+                <hr style="margin:8px 0;border-color:#bae6fd;">
+                <div style="display:flex;justify-content:space-between;"><span>💰 Comprador paga</span><strong style="color:#2563eb;">$153.000</strong></div>
+                <div style="display:flex;justify-content:space-between;margin-top:4px;"><span>💵 Vendedor recibe</span><strong style="color:#10b981;">$147.000</strong></div>
+            </div>
+            <a class="btn btn-primary btn-block" style="display:block;text-align:center;">Crear transacción segura</a>
+        </div>
+    </div>
+</div>
+
+<!-- Screen 3: Comisiones -->
+<div class="screen">
+    <div class="screen-header">
+        <span class="logo">🛡️ AvalEscrow</span>
+        <div class="nav"><span>💰 Comisiones</span></div>
+    </div>
+    <div class="screen-body">
+        <div class="features-2col">
+            <div class="feature" style="text-align:center;">
+                <div class="icon" style="font-size:2rem;">🔵</div>
+                <h4>Comprador paga</h4>
+                <div style="font-size:2rem;font-weight:700;color:#2563eb;">2%</div>
+                <p style="font-size:0.8rem;">Ej: $100.000 → pagás $102.000</p>
+            </div>
+            <div class="feature" style="text-align:center;">
+                <div class="icon" style="font-size:2rem;">🟢</div>
+                <h4>Vendedor paga</h4>
+                <div style="font-size:2rem;font-weight:700;color:#2563eb;">2%</div>
+                <p style="font-size:0.8rem;">Ej: $100.000 → recibís $98.000</p>
+            </div>
+        </div>
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px;margin:16px 0;font-size:0.85rem;">
+            ⚠️ <strong>Monto mínimo:</strong> $50.000 por operación.
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin-top:12px;">
+            <h4 style="margin-bottom:8px;">📊 Comparado con otras plataformas</h4>
+            <table style="width:100%;font-size:0.85rem;border-collapse:collapse;">
+                <tr><th style="text-align:left;padding:8px;border-bottom:2px solid #e2e8f0;">Plataforma</th><th style="text-align:left;padding:8px;border-bottom:2px solid #e2e8f0;">Comisión</th></tr>
+                <tr><td style="padding:8px;border-bottom:1px solid #f1f5f9;">MercadoLibre</td><td style="padding:8px;border-bottom:1px solid #f1f5f9;">10% - 16%</td></tr>
+                <tr><td style="padding:8px;border-bottom:1px solid #f1f5f9;">Escrow.com</td><td style="padding:8px;border-bottom:1px solid #f1f5f9;">0.9% - 3%</td></tr>
+                <tr style="background:#f0fdf4;font-weight:700;"><td style="padding:8px;">🛡️ AvalEscrow</td><td style="padding:8px;">2% + 2% (~4% total)</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    🛡️ AvalEscrow — Hecho en Argentina para argentinos<br>
+    <span style="font-size:0.7rem;">Las transacciones se ejecutan sobre Polygon Network usando contratos inteligentes auditables.</span>
+</div>
+</div>
+</body>
+</html>

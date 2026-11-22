@@ -1,0 +1,20 @@
+{
+  "name": "aval-escrow-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts para AvalEscrow - plataforma de escrow sobre Polygon",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:testnet": "npx hardhat run ../scripts/deploy.js --network amoy",
+    "deploy:mainnet": "npx hardhat run ../scripts/deploy.js --network polygon",
+    "console": "npx hardhat console"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}

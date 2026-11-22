@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvalEscrow - Pagos Seguros</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">🛡️ AvalEscrow</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active" onclick="showPage('inicio')">Inicio</a>
+                <a href="#" onclick="showPage('crear')">Nueva</a>
+                
+                <a href="#" onclick="showPage('mis-transacciones')">Mis Transacciones</a>
+                <a href="#" onclick="showPage('comisiones')">💰 Comisiones</a>
+                <a href="#" onclick="showPage('como-funciona')">¿Cómo funciona?</a>
+                <a href="#" onclick="showPage('crear-cadena')">🔗 En Cadena</a>
+            </div>
+            <div class="nav-user" id="navUser">
+                <span id="userDisplay" style="cursor:pointer" onclick="registrarOJugar()">🔑 Registrarse</span>
+                <span id="logoutBtn" style="display:none;cursor:pointer;margin-left:8px;color:var(--danger)" onclick="cerrarSesion()">✕</span>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+        </div>
+    </nav>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" onclick="showPage('inicio');toggleMenu()">🏠 Inicio</a>
+        <a href="#" onclick="showPage('crear');toggleMenu()">🆕 Nueva Transacción</a>
+        
+        <a href="#" onclick="showPage('mis-transacciones');toggleMenu()">📋 Mis Transacciones</a>
+        <a href="#" onclick="showPage('comisiones');toggleMenu()">💰 Comisiones</a>
+        <a href="#" onclick="showPage('como-funciona');toggleMenu()">📖 ¿Cómo funciona?</a>
+        <a href="#" onclick="showPage('crear-cadena');toggleMenu()">🔗 En Cadena</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <!-- PÁGINA: INICIO -->
+        <section id="page-inicio" class="page active">
+            <div class="hero">
+                <h1>🛡️ Comprá y vendé con protección</h1>
+                <p class="hero-sub">El pago queda protegido hasta que recibas el producto o servicio y confirmes que está todo bien.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-lg" onclick="showPage('crear')">Crear transacción</button>
+                    <button class="btn btn-outline btn-lg" onclick="showPage('como-funciona')">¿Cómo funciona?</button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>El dinero queda protegido hasta que se cumplan las condiciones acordadas.</h3>
+                    <p>El vendedor sabe que el pago está asegurado y entrega el producto o servicio sin quedar expuesto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>El vendedor entrega</h3>
+                    <p>El vendedor entrega el producto o servicio y vos podés seguir el estado de la operación.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Confirmás o reclamás</h3>
+                    <p>Si algo sale mal, abrís un reclamo. Revisamos las pruebas y resolvemos si corresponde liberar el pago o devolverlo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇦🇷</div>
+                    <h3>Pensado para Argentina</h3>
+                    <p>Pagás con medios simples y conocidos. No necesitás saber nada de tecnología ni criptomonedas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA: COMISIONES -->
+        <section id="page-comisiones" class="page">
+            <h2>💰 Comisiones AvalEscrow</h2>
+            <p class="subtitle">Simple: <strong>2% comprador + 2% vendedor.</strong> El spread de conversión lo absorbe la plataforma. Nadie toca cripto.</p>
+
+            <div class="comisiones-grid">
+                <div class="comision-card">
+                    <div class="comision-card-header">
+                        <span class="comision-card-icon">🔵</span>
+                        <h3>Comprador paga</h3>
+                    </div>
+                    <div class="comision-card-body">
+                        <div class="comision-card-precio">2%</div>
+                        <p class="comision-card-desc">Precio producto + 2%</p>
+                        <p class="comision-card-ejemplo">Ej: $100.000 → pagás $102.000</p>
+                    </div>
+                </div>
+                <div class="comision-card">
+                    <div class="comision-card-header">
+                        <span class="comision-card-icon">🟢</span>
+                        <h3>Vendedor paga</h3>
+                    </div>
+                    <div class="comision-card-body">
+                        <div class="comision-card-precio">2%</div>
+                        <p class="comision-card-desc">Precio producto - 2%</p>
+                        <p class="comision-card-ejemplo">Ej: $100.000 → recibís $98.000</p>
+                    </div>
+                </div>
+                <div class="comision-card" style="border-color: var(--primary);">
+                    <div class="comision-card-header" style="background: #f0fdf4;">
+                        <span class="comision-card-icon">🏦</span>
+                        <h3>Gana la plataforma</h3>
+                    </div>
+                    <div class="comision-card-body">
+                        <div class="comision-card-precio">~2% neto</div>
+                        <p class="comision-card-desc">Después de cubrir spread</p>
+                        <p class="comision-card-ejemplo">4% total - 2% spread = 2% ganancia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-cadena" style="margin-top:24px">
+                <p>⚠️ <strong>Monto mínimo:</strong> $50.000 por operación. Sin excepción.</p>
+            </div>
+
+            <div class="info-cadena" style="margin-top:12px">
+                <p>🔗 <strong>Cadena de pagos:</strong> Cada eslabón paga su propio fee (2%+2%). Si A→B→C, el fee se cobra en cada eslabón por separado.</p>
+            </div>
+
+            <div class="comparativa-box">
+                <h3>📊 Comparado con otras plataformas</h3>
+                <table class="comparativa-table">
+                    <tr><th>Plataforma</th><th>Comisión</th><th>Llega a ARG?</th></tr>
+                    <tr><td>MercadoLibre</td><td>10% - 16%</td><td>✅ Sí</td></tr>
+                    <tr><td>Escrow.com</td><td>0.9% - 3%</td><td>❌ No</td></tr>
+                    <tr><td>Trustap</td><td>0.5% - 1.5%</td><td>❌ No</td></tr>
+                    <tr class="resaltado"><td><strong>🛡️ AvalEscrow</strong></td><td><strong>2% + 2% (~4% total)</strong></td><td><strong>✅ Argentina</strong></td></tr>
+                </table>
+                <p class="comparativa-nota">* En MercadoLibre pagás comisión sobre el precio total + envío. En AvalEscrow el spread de conversión va por cuenta de la plataforma.</p>
+            </div>
+
+            <div class="calculadora-box" style="margin-top:24px">
+                <h3>🧮 Calculá cuánto sale</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Monto del producto ($)</label>
+                        <input type="number" id="calcMonto" placeholder="Ej: 250000" min="1" oninput="calcularComisionManual()">
+                    </div>
+                </div>
+                <div id="calcResultado" class="comision-preview" style="display:none;">
+                    <div class="comision-detalle">
+                        <span class="comision-label">🔵 Fee comprador (2%)</span>
+                        <span class="comision-valor" id="calcComision">$0</span>
+                    </div>
+                    <div class="comision-detalle">
+                        <span class="comision-label">🟢 Fee vendedor (2%)</span>
+                        <span class="comision-valor" id="calcTotal">$0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA: CÓMO FUNCIONA -->
+        <section id="page-como-funciona" class="page">
+            <h2>📖 ¿Cómo funciona AvalEscrow?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Creás la transacción</h3>
+                        <p>Ingresás los datos del comprador, vendedor, producto y monto. Generamos un link de pago.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>El comprador paga</h3>
+                        <p>El comprador transfiere los pesos (transferencia bancaria, Mercado Pago, etc.). Nosotros lo convertimos a USDT y lo retenemos en el contrato inteligente.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>El vendedor envía</h3>
+                        <p>El vendedor ve que los fondos están retenidos y procede a enviar el producto.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>El comprador confirma</h3>
+                        <p>¿Llegó todo bien? El comprador aprieta "Confirmar entrega" y los fondos se liberan al vendedor al instante.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">⚖️</div>
+                    <div class="step-content">
+                        <h3>¿Problema? Disputa</h3>
+                        <p>Si algo sale mal, se abre una disputa. Un árbitro revisa las pruebas (chat, fotos, seguimiento) y decide quién tiene razón. La plata nunca queda en manos de nadie hasta que se resuelve.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA: CREAR TRANSACCIÓN -->
+        <section id="page-crear" class="page">
+            <h2>🆕 Nueva transacción</h2>
+            <p class="subtitle">Completá los datos de la compra-venta</p>
+            
+            <form id="formCrear" class="form" onsubmit="event.preventDefault(); crearTransaccion(); return false">
+                <div class="form-group">
+                    <label for="vendedor_email">Email del vendedor</label>
+                    <input type="email" id="vendedor_email" placeholder="vendedor@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="vendedor_nombre">Nombre del vendedor</label>
+                    <input type="text" id="vendedor_nombre" placeholder="María García">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Producto / Servicio</label>
+                    <input type="text" id="descripcion" placeholder="Ej: Notebook HP Pavilion i5, 8GB RAM, 256GB SSD" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="monto">Monto en pesos ($)</label>
+                        <input type="number" id="monto" placeholder="150000" min="1" required oninput="actualizarComisionPreview()">
+                    </div>
+                    <div class="form-group">
+                        <label for="plazo">Plazo para confirmar (días)</label>
+                        <input type="number" id="plazo" value="7" min="1" max="90">
+                    </div>
+                </div>
+                <div id="comisionPreview" class="comision-preview" style="display:none;">
+                    <div class="comision-detalle">
+                        <span class="comision-label">🔵 Fee comprador (2%)</span>
+                        <span class="comision-valor" id="comisionValorComprador">$0</span>
+                    </div>
+                    <div class="comision-detalle">
+                        <span class="comision-label">🟢 Fee vendedor (2%)</span>
+                        <span class="comision-valor" id="comisionValorVendedor">$0</span>
+                    </div>
+                    <hr style="margin:8px 0;border:0;border-top:1px solid var(--gray-200);">
+                    <div class="comision-detalle">
+                        <span class="comision-label">💰 Comprador paga</span>
+                        <span class="comision-valor" id="comisionTotalComprador">$0</span>
+                    </div>
+                    <div class="comision-detalle">
+                        <span class="comision-label">💵 Vendedor recibe</span>
+                        <span class="comision-valor" id="comisionTotalVendedor">$0</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Crear transacción segura</button>
+            </form>
+
+            <div id="resultadoCrear" class="result-card" style="display:none;">
+                <h3>✅ Transacción creada</h3>
+                <p>Este es tu link de pago: abrilo cuando quieras transferir. También podés compartirlo con quien pague.</p>
+                <div class="link-box">
+                    <input type="text" id="linkPago" readonly>
+                    <button class="btn btn-small" onclick="copiarLink()">📋 Copiar</button>
+                </div>
+                <div class="tx-info">
+                    <p><strong>ID:</strong> <span id="txId"></span></p>
+                    <p><strong>Estado:</strong> <span class="badge badge-pendiente">Pendiente de pago</span></p>
+                    <p><strong>Monto producto:</strong> $<span id="txMonto"></span></p>
+                    <p><strong>🔵 Fee comprador (2%):</strong> $<span id="txFeeComprador"></span></p>
+                    <p><strong>🟢 Fee vendedor (2%):</strong> $<span id="txFeeVendedor"></span></p>
+                    <hr>
+                    <p><strong>💰 Comprador paga:</strong> $<span id="txTotalComprador"></span></p>
+                    <p><strong>💵 Vendedor recibe:</strong> $<span id="txTotalVendedor"></span></p>
+                </div>
+                <button class="btn btn-outline" onclick="showPage('mis-transacciones')">Ver mis transacciones</button>
+            </div>
+        </section>
+
+        <!-- PÁGINA: CREAR ESLABÓN EN CADENA -->
+        <section id="page-crear-cadena" class="page">
+            <h2>🔗 Eslabón de cadena</h2>
+            <p class="subtitle">Agregá un eslabón a tu escrow retenido para pagar insumos o animar estafadores en la cadena. El dinero ya está retenido: el eslabón nuevo toma de ese monto.</p>
+            <form id="formCadena" class="form" onsubmit="event.preventDefault(); crearEslabon(); return false">
+                <div class="form-group">
+                    <label>Escrow de origen (retenido, con fondos)</label>
+                    <select id="cadena_origen" class="form-select">
+                        <option value="">Seleccionar transacción...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cadena_vendedor_email">Email del nuevo vendedor (C)</label>
+                    <input type="email" id="cadena_vendedor_email" placeholder="proveedor@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="cadena_vendedor_nombre">Nombre del nuevo vendedor (opcional)</label>
+                    <input type="text" id="cadena_vendedor_nombre" placeholder="Nombre del nuevo vendedor">
+                </div>
+                <div class="form-group">
+                    <label for="cadena_monto">Monto del eslabón ($, máximo disponible)</label>
+                    <input type="number" id="cadena_monto" placeholder="150000" min="50000" required>
+                </div>
+                <div class="form-group">
+                    <label for="cadena_descripcion">Descripción (opcional)</label>
+                    <input type="text" id="cadena_descripcion" placeholder="Ej: Insumos para la producción">
+                </div>
+                <div class="form-group">
+                    <label for="cadena_plazo">Plazo para confirmar (días)</label>
+                    <input type="number" id="cadena_plazo" value="7" min="1" max="90">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Crear eslabón</button>
+            </form>
+            <div id="resultadoCadena" class="result-card" style="display:none;">
+                <h3>✅ Eslabón creado</h3>
+                <p id="cadenaInfo"></p>
+                <button class="btn btn-outline" onclick="crearOtroEslabon()">Crear otro eslabón</button>
+            </div>
+        </section>
+
+        <!-- PÁGINA: MIS TRANSACCIONES -->
+        <section id="page-mis-transacciones" class="page">
+            <h2>📋 Mis transacciones</h2>
+            
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="todas" onclick="filtrarTransacciones('todas')">Todas</button>
+                <button class="filter-btn" data-filter="pendiente" onclick="filtrarTransacciones('pendiente')">Pendientes</button>
+                <button class="filter-btn" data-filter="completado" onclick="filtrarTransacciones('completado')">Completadas</button>
+                <button class="filter-btn" data-filter="disputa" onclick="filtrarTransacciones('disputa')">En disputa</button>
+            </div>
+
+            <div id="listaTransacciones">
+                <div class="empty-state">
+                    <p>📭 Todavía no tenés transacciones. <a href="#" onclick="showPage('crear')">Creá la primera</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA: DETALLE DE TRANSACCIÓN -->
+        <section id="page-detalle" class="page">
+            <a href="#" class="back-link" onclick="showPage('mis-transacciones')">← Volver a mis transacciones</a>
+            <div id="detalleContent"></div>
+        </section>
+
+        <!-- PÁGINA: PAGAR (link compartido) -->
+        <section id="page-pagar" class="page">
+            <div id="pagarContent"></div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>🛡️ AvalEscrow — Hecho en Argentina para argentinos</p>
+            <p class="small">Pagos seguros y simples, pensados para Argentina.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE REGISTRO -->
+    <div class="modal-overlay" id="modalRegistro">
+        <div class="modal">
+            <h3 id="modalTitle">🔑 Registrarse</h3>
+            <p id="modalDesc">Ingresá tus datos para usar AvalEscrow</p>
+            <input type="text" id="modalNombre" placeholder="Tu nombre completo" autocomplete="name">
+            <input type="email" id="modalEmail" placeholder="Tu email" autocomplete="email">
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="cerrarModal()">Cancelar</button>
+                <button class="btn btn-primary" onclick="confirmarRegistro()">✅ Registrarse</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- SCRIPTS -->
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
