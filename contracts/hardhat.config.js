@@ -18,7 +18,8 @@ module.exports = {
   networks: {
     // Polygon Amoy (testnet vigente — Mumbai fue dado de baja)
     amoy: {
-      url: process.env.AMOY_RPC || "https://rpc-amoy.polygon.technology",
+      // Se exige AMOY_RPC en .env (el default oficial no resolvió en este entorno)
+      url: process.env.AMOY_RPC,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
     // Polygon Mainnet - para producción

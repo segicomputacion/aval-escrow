@@ -144,12 +144,20 @@ Toda mutación exige autenticación: `Authorization: Bearer <token>` (devuelto p
 
 ```bash
 cd escrow-app/contracts
+# Instalar dependencias
 npm install
+# Configurar .env: AMOY_RPC apuntando a un endpoint de Amoy (Alchemy/QuickNode/Envless...)
+# y PRIVATE_KEY del deployer (si querés deploy a Amoy)
+cp .env.example .env
 npx hardhat compile
 npx hardhat test
-# Despliegue a Amoy (testnet vigente)
+# Deploy a Amoy (testnet vigente — un wallet funded requerido)
 npx hardhat run ../scripts/deploy.js --network amoy
+# O deploy "en seco" sin claves ni red (para ver el código compilado)
+npx hardhat run ../scripts/deploy.js --network hardhat
 ```
+
+> 📡 **Importante:** el endpoint oficial de Amoy (`https://rpc-amoy.polygon.technology`) no resolvió desde este entorno; si no te funciona ningún endpoint oficial, probá uno de tu proveedor (Alchemy, QuickNode, Envless) o hacés deploy local con `--network hardhat` y deprecated --network amoy.
 
 ### 2. Backend
 
