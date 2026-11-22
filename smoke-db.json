@@ -1,0 +1,245 @@
+{
+  "usuarios": [
+    {
+      "id": "admin001",
+      "email": "admin@avalescrow.com",
+      "nombre": "Administrador AvalEscrow",
+      "password": "035e684a5494337dba41735ba7a503c3:13ea8b8d878e588193ebfb3f0b4db9bc4e4863f436d0a417c014aa5aa96c0809de826b42661c7db89ecd38f7ac4dee6667f9e04dbc18c6cb68b77f72d764b83d",
+      "es_admin": 1,
+      "created_at": "2026-11-22T03:38:00.996Z",
+      "ultimo_login": "2026-11-22T03:38:17.551Z"
+    },
+    {
+      "id": "d5c1d821-5939-4fd0-97e4-e0341651acb5",
+      "email": "comprador197201@aval.test",
+      "nombre": "comprador197201",
+      "created_at": "2026-11-22T03:38:17.336Z",
+      "ultimo_login": "2026-11-22T03:38:17.336Z"
+    },
+    {
+      "id": "328ac52c-8ad5-432a-9885-e77f5f48175d",
+      "email": "vendedor197201@aval.test",
+      "nombre": "vendedor197201",
+      "created_at": "2026-11-22T03:38:17.347Z",
+      "ultimo_login": "2026-11-22T03:38:17.347Z"
+    },
+    {
+      "id": "7c6c81e0-4511-4da0-b97f-cce5a756a8e9",
+      "email": "c197201@aval.test",
+      "nombre": "c197201",
+      "created_at": "2026-11-22T03:38:17.358Z",
+      "ultimo_login": "2026-11-22T03:38:17.358Z"
+    },
+    {
+      "id": "2dd076fb-ab1e-4e83-bb0f-16d3e9b13e82",
+      "email": "v297201@aval.test",
+      "nombre": "v297201",
+      "created_at": "2026-11-22T03:38:17.477Z",
+      "ultimo_login": "2026-11-22T03:38:17.486Z"
+    },
+    {
+      "id": "e15b0c97-6fa1-4dce-8a9b-24ab3a6fea1f",
+      "email": "v2b97201@aval.test",
+      "nombre": "v2b97201",
+      "created_at": "2026-11-22T03:38:17.493Z",
+      "ultimo_login": "2026-11-22T03:38:17.493Z"
+    },
+    {
+      "id": "0496b5b1-deb1-498a-abaf-bb28d1ace16c",
+      "email": "v397201@aval.test",
+      "nombre": "v397201",
+      "created_at": "2026-11-22T03:38:17.514Z",
+      "ultimo_login": "2026-11-22T03:38:17.530Z"
+    },
+    {
+      "id": "22992e3a-d294-40d5-bd75-5d6ef0971f9c",
+      "email": "v497201@aval.test",
+      "nombre": "v497201",
+      "created_at": "2026-11-22T03:38:17.539Z"
+    },
+    {
+      "id": "3bb8780f-8b0a-45ad-ade0-abeabc38f84e",
+      "email": "prueba-ui@aval.test",
+      "nombre": "prueba-ui",
+      "created_at": "2026-11-22T03:38:53.534Z",
+      "ultimo_login": "2026-11-22T03:38:53.534Z"
+    },
+    {
+      "id": "7b0a9909-fc65-4431-80ce-2b515c62fb06",
+      "email": "prueba-ui2@aval.test",
+      "nombre": "prueba-ui2",
+      "created_at": "2026-11-22T03:39:20.663Z",
+      "ultimo_login": "2026-11-22T03:39:20.663Z"
+    },
+    {
+      "id": "91074076-8d9a-469b-b310-3b3b4e8c5219",
+      "email": "vendedor-ui@aval.test",
+      "nombre": "vendedor-ui",
+      "created_at": "2026-11-22T03:39:41.564Z"
+    }
+  ],
+  "transacciones": [
+    {
+      "id": "91f73142-7f55-4ab6-8bed-9208f430222e",
+      "comprador_id": "d5c1d821-5939-4fd0-97e4-e0341651acb5",
+      "vendedor_id": "328ac52c-8ad5-432a-9885-e77f5f48175d",
+      "monto_ars": 50000,
+      "fee_comprador_ars": 1000,
+      "fee_vendedor_ars": 1000,
+      "descripcion": "Notebook HP Display - smoke test",
+      "estado": "completado",
+      "plazo_dias": 7,
+      "parent_id": null,
+      "chain_child_id": null,
+      "acuerdos": [],
+      "created_at": "2026-11-22T03:38:17.367Z",
+      "link_pago": "http://localhost:3002/?pagar=91f73142-7f55-4ab6-8bed-9208f430222e",
+      "depositado_at": "2026-11-22T03:38:17.456Z",
+      "completado_at": "2026-11-22T03:38:17.464Z",
+      "retirado": 1,
+      "retiro_alias": "mi.alias",
+      "retiro_cbu": "0123456789",
+      "retiro_monto": 49000,
+      "retiro_at": "2026-11-22T03:38:17.471Z"
+    },
+    {
+      "id": "9a5156df-adca-4f47-9639-5da16aa2b669",
+      "comprador_id": "d5c1d821-5939-4fd0-97e4-e0341651acb5",
+      "vendedor_id": "2dd076fb-ab1e-4e83-bb0f-16d3e9b13e82",
+      "monto_ars": 100000,
+      "fee_comprador_ars": 2000,
+      "fee_vendedor_ars": 2000,
+      "descripcion": "Raiz de cadena",
+      "estado": "completado",
+      "plazo_dias": 7,
+      "parent_id": null,
+      "chain_child_id": "7ed27cd7-2542-4081-8572-58658cee7c3e",
+      "acuerdos": [],
+      "created_at": "2026-11-22T03:38:17.477Z",
+      "link_pago": "http://localhost:3002/?pagar=9a5156df-adca-4f47-9639-5da16aa2b669",
+      "depositado_at": "2026-11-22T03:38:17.480Z",
+      "completado_at": "2026-11-22T03:38:17.508Z"
+    },
+    {
+      "id": "7ed27cd7-2542-4081-8572-58658cee7c3e",
+      "comprador_id": "2dd076fb-ab1e-4e83-bb0f-16d3e9b13e82",
+      "vendedor_id": "e15b0c97-6fa1-4dce-8a9b-24ab3a6fea1f",
+      "monto_ars": 60000,
+      "fee_comprador_ars": 0,
+      "fee_vendedor_ars": 1200,
+      "descripcion": "eslabon del smoke",
+      "estado": "completado",
+      "plazo_dias": 7,
+      "parent_id": "9a5156df-adca-4f47-9639-5da16aa2b669",
+      "chain_child_id": null,
+      "acuerdos": [],
+      "created_at": "2026-11-22T03:38:17.497Z",
+      "completado_at": "2026-11-22T03:38:17.508Z"
+    },
+    {
+      "id": "85b5f41d-4e47-444f-a354-13d001971689",
+      "comprador_id": "d5c1d821-5939-4fd0-97e4-e0341651acb5",
+      "vendedor_id": "0496b5b1-deb1-498a-abaf-bb28d1ace16c",
+      "monto_ars": 50000,
+      "fee_comprador_ars": 1000,
+      "fee_vendedor_ars": 1000,
+      "descripcion": "Disputa doble",
+      "estado": "completado",
+      "plazo_dias": 7,
+      "parent_id": null,
+      "chain_child_id": null,
+      "acuerdos": [
+        {
+          "usuario_id": "d5c1d821-5939-4fd0-97e4-e0341651acb5",
+          "ganador_vendedor": true,
+          "created_at": "2026-11-22T03:38:17.524Z"
+        },
+        {
+          "usuario_id": "0496b5b1-deb1-498a-abaf-bb28d1ace16c",
+          "ganador_vendedor": true,
+          "created_at": "2026-11-22T03:38:17.533Z"
+        }
+      ],
+      "created_at": "2026-11-22T03:38:17.515Z",
+      "link_pago": "http://localhost:3002/?pagar=85b5f41d-4e47-444f-a354-13d001971689",
+      "depositado_at": "2026-11-22T03:38:17.518Z",
+      "disputa_abierta_por": "d5c1d821-5939-4fd0-97e4-e0341651acb5",
+      "disputa_motivo": "producto roto",
+      "resuelto_at": "2026-11-22T03:38:17.534Z"
+    },
+    {
+      "id": "7e916ecb-f5c0-4c00-8902-746d4ad7d6b7",
+      "comprador_id": "d5c1d821-5939-4fd0-97e4-e0341651acb5",
+      "vendedor_id": "22992e3a-d294-40d5-bd75-5d6ef0971f9c",
+      "monto_ars": 50000,
+      "fee_comprador_ars": 1000,
+      "fee_vendedor_ars": 1000,
+      "descripcion": "Disputa refund",
+      "estado": "reembolsado",
+      "plazo_dias": 7,
+      "parent_id": null,
+      "chain_child_id": null,
+      "acuerdos": [],
+      "created_at": "2026-11-22T03:38:17.540Z",
+      "link_pago": "http://localhost:3002/?pagar=7e916ecb-f5c0-4c00-8902-746d4ad7d6b7",
+      "depositado_at": "2026-11-22T03:38:17.543Z",
+      "disputa_abierta_por": "d5c1d821-5939-4fd0-97e4-e0341651acb5",
+      "disputa_motivo": "",
+      "resuelto_at": "2026-11-22T03:38:17.558Z",
+      "resuelto_por": "admin001"
+    },
+    {
+      "id": "37077875-206f-4c1a-81b9-5ddcef971ba4",
+      "comprador_id": "7b0a9909-fc65-4431-80ce-2b515c62fb06",
+      "vendedor_id": "91074076-8d9a-469b-b310-3b3b4e8c5219",
+      "monto_ars": 100000,
+      "fee_comprador_ars": 2000,
+      "fee_vendedor_ars": 2000,
+      "descripcion": "Prueba completa - Notebook",
+      "estado": "completado",
+      "plazo_dias": 7,
+      "parent_id": null,
+      "chain_child_id": null,
+      "acuerdos": [],
+      "created_at": "2026-11-22T03:39:41.565Z",
+      "link_pago": "http://localhost:3002/?pagar=37077875-206f-4c1a-81b9-5ddcef971ba4",
+      "depositado_at": "2026-11-22T03:39:49.780Z",
+      "completado_at": "2026-11-22T03:39:49.884Z"
+    }
+  ],
+  "sessions": {
+    "49ce03c7ef9324305085a86e0400ff7167eb9ba6080be1bdca52902d1fb90b14": {
+      "usuario_id": "328ac52c-8ad5-432a-9885-e77f5f48175d",
+      "created_at": "2026-11-22T03:38:17.348Z"
+    },
+    "81f0c500dbc5a64985ecfc49d65e808ea005345ddaadbd029f42609c78ae8d3d": {
+      "usuario_id": "7c6c81e0-4511-4da0-b97f-cce5a756a8e9",
+      "created_at": "2026-11-22T03:38:17.358Z"
+    },
+    "dd54e148316fb35aa57185967e44e2472a3a86ab950a7fccfeb859fbfaa32ffb": {
+      "usuario_id": "2dd076fb-ab1e-4e83-bb0f-16d3e9b13e82",
+      "created_at": "2026-11-22T03:38:17.487Z"
+    },
+    "ae674467bed0692fd140a4b975800ac828107dcda8ab315e75ff8df08904d45c": {
+      "usuario_id": "e15b0c97-6fa1-4dce-8a9b-24ab3a6fea1f",
+      "created_at": "2026-11-22T03:38:17.494Z"
+    },
+    "894d7cb43d375fe4af4655188ca5fa341a3582b34c0800c291d0e74885d05166": {
+      "usuario_id": "0496b5b1-deb1-498a-abaf-bb28d1ace16c",
+      "created_at": "2026-11-22T03:38:17.531Z"
+    },
+    "37780b972c04d88a75c11f63ff0ecaed829a1e0fb2aa139b3cf0e2346f4794a9": {
+      "usuario_id": "admin001",
+      "created_at": "2026-11-22T03:38:17.552Z"
+    },
+    "99343b1097b6d5acc5fff1dfa6afcafe306bd51ff812a13abb42ac79784364cf": {
+      "usuario_id": "3bb8780f-8b0a-45ad-ade0-abeabc38f84e",
+      "created_at": "2026-11-22T03:38:53.535Z"
+    },
+    "ba718805cadfea194611e38efd22a9dd64732f21d15dd8ffdc99624cd2dce1ba": {
+      "usuario_id": "7b0a9909-fc65-4431-80ce-2b515c62fb06",
+      "created_at": "2026-11-22T03:39:20.664Z"
+    }
+  },
+  "codigos": {}
+}
